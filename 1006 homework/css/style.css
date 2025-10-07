@@ -1,0 +1,64 @@
+/* 藍白漸層背景 */
+body {
+  background: linear-gradient(to bottom, #0088dc 0%, #00aaff 100%);
+  margin: 0;
+  padding: 40px; /* 這是讓外框與視窗之間留距離 */
+  font-family: "Segoe UI", sans-serif;
+}
+
+.main {
+  background-color: #e0f7ff; /* 淺藍主體 */
+  border: 8px solid #5dd9f8; /* 深藍外框 */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 1200px; /* 控制整體寬度，接近範本比例 */
+  margin: 0 auto; /* 置中 */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* 讓 Banner 圖片固定高度並裁切 */
+.banner img {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* 文字樣式 */
+h5 {
+  font-weight: 600;
+}
+
+.link-info {
+  color: #0288d1;
+  text-decoration: none;
+}
+
+.link-info:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+}
+/* 顏色微調，與原圖一致 */
+.bg-info {
+  background-color: #dc4e4e !important;
+}
+
+.bg-primary {
+  background-color: #9dcae2 !important;
+}
+
+header img {
+  display: block;
+  width: 100%;
+}
+
+
+/* .navbar-custom {
+  background: linear-gradient(to bottom, #00c6ff, #0072ff);
+} */
+
