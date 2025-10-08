@@ -10,7 +10,7 @@ body {
   background-color: #e0f7ff; /* 淺藍主體 */
   border: 8px solid #5dd9f8; /* 深藍外框 */
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  width: 100%;
+  width: 70%;
   max-width: 1200px; /* 控制整體寬度，接近範本比例 */
   margin: 0 auto; /* 置中 */
   padding: 0;
@@ -31,7 +31,7 @@ h5 {
 }
 
 .link-info {
-  color: #0288d1;
+  color: #570f15;
   text-decoration: none;
 }
 
@@ -55,6 +55,9 @@ footer {
 header img {
   display: block;
   width: 100%;
+}
+.nav-link:hover{
+  color: #d48712 !important;
 }
 
 
