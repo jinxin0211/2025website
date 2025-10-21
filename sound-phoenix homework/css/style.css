@@ -1,75 +1,414 @@
-/* 基本設定 */
+
+/* 全局样式 */
 body {
-  background-color: #222;
-  color: #ddd;
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
+    background: linear-gradient(to bottom, #000000, #2c2c2c);
+    color: #d4af37;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
-/* Header */
-header {
-  background-color: #2a2a2a;
-  border: 2px solid #ffcc55;
-  border-radius: 5px;
-}
-header h1 { color: #ffcc55; font-weight: bold; margin: 0; }
-.login-box input { width: 100px; }
-.login-box button { background-color: #ffcc55; border: none; color: #222; }
-
-/* Player Section */
-.player-block {
-  background-color: #333;
-  border: 2px solid #ffcc55;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.main-bg {
+    background: linear-gradient(to bottom, #000000, #2c2c2c);
+    min-height: 100vh;
+    position: relative;
 }
 
-/* Main Content */
-.main-block .left-block, 
-.main-block .center-block, 
-.main-block .right-block {
-  border: 2px solid #ffcc55;
-  border-radius: 5px;
-  background-color: #2d2d2d;
+/* 颜色类 */
+.text-gold {
+    color: #d4af37 !important;
 }
 
-.main-content {
-  background-color: #3a3a3a;
-  border: 2px solid #ffcc55;
-  border-radius: 5px;
+.text-orange {
+    color: #ff6b35 !important;
 }
 
-/* Footer */
-footer {
-  background-color: #2a2a2a;
-  border: 2px solid #ffcc55;
-  color: #ffcc55;
-  border-radius: 5px;
-  margin-top: 10px;
+/* 头部区域 */
+.header-section {
+    height: 160px;
+    width: 100%;
 }
 
-/* Placeholder 圖片 */
-.img-placeholder {
-  background-color: #444;
-  color: #ffcc55;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px dashed #ffcc55;
-  border-radius: 5px;
-  height: 120px;
-  margin-bottom: 10px;
+/* 凤凰图片 (左侧) */
+.phoenix-image {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
 }
-.logo-placeholder { width: 50px; height: 50px; }
-.turntable-placeholder { width: 100%; height: 180px; }
-.content-placeholder { width: 100%; height: 200px; }
 
-/* 響應式調整 */
-@media (max-width: 767px) {
-  header, #player-section, main, footer {
+.phoenix-placeholder {
+    width: 120px;
+    height: 120px;
+}
+
+.phoenix-content {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #d4af37;
     text-align: center;
-  }
-
-  .login-box { flex-direction: column; gap: 5px; margin-top: 10px; }
+    border-radius: 8px;
+    background: rgba(212, 175, 55, 0.1);
 }
+
+/* SOUND PHOENIX 主标题 (中上) */
+.main-title {
+    position: absolute;
+    top: 20px;      /* 顶部距离，可自行调整 */
+    left: 20px;     /* 左侧距离，可自行调整 */
+    transform: none; /* 取消水平居中 */
+    z-index: 10;
+    text-align: left;
+}
+.logo-text {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+.phoenix-text {
+    color: #ff6b35;
+}
+
+/* 登录框 (右上角) */
+.login-box {
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid #d4af37;
+    z-index: 15;
+}
+
+.login-box .form-control {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    font-size: 0.75rem;
+    height: 28px;
+}
+
+.login-box .form-control:focus {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+    color: #d4af37;
+}
+
+.login-box .form-label {
+    color: #d4af37;
+    font-size: 0.75rem;
+    margin-bottom: 3px;
+}
+
+.login-box .btn-warning {
+    background: #d4af37;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.75rem;
+    height: 32px;
+}
+
+.login-box .btn-warning:hover {
+    background: #ff6b35;
+}
+
+.form-options {
+    font-size: 0.65rem;
+}
+
+.form-check-input:checked {
+    background-color: #d4af37;
+    border-color: #d4af37;
+}
+
+/* 内容框样式 */
+.content-box {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #d4af37;
+    min-height: 120px;
+}
+
+/* DJ设备区域 */
+.dj-equipment-placeholder {
+    margin: 10px 0;
+}
+
+.equipment-image {
+    width: 120px;
+    height: 80px;
+    border: 2px dashed #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 8px;
+    color: #d4af37;
+    font-size: 10px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* 品牌标志区域 */
+.brand-logos-grid {
+    width: 100%;
+}
+
+.logo-item {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo-img {
+    max-width: 100%;
+    max-height: 150px; /* 调整成大格子合适高度 */
+    object-fit: contain; /* 保持比例 */
+}
+
+/* 功能列表 */
+.feature-item {
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+}
+
+/* 音乐控制区域 */
+.music-control-section {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #d4af37;
+    min-height: 60px;
+}
+
+.track-title {
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.artist-name {
+    color: #ff6b35;
+    font-size: 0.8rem;
+}
+
+.play-button {
+    background: #d4af37;
+    color: #000;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.progress-container {
+    max-width: 200px;
+}
+
+.progress-bar {
+    height: 6px;
+    background: rgba(212, 175, 55, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 40%;
+    height: 100%;
+    background: #d4af37;
+}
+
+/* 导航列表 */
+.nav-list .nav-link {
+    font-size: 0.8rem;
+    padding: 3px 0 !important;
+    line-height: 1.2;
+}
+
+.nav-list .nav-link:hover {
+    color: #ff6b35 !important;
+}
+
+/* 下载列表 */
+.download-list li {
+    margin-bottom: 6px;
+}
+
+.download-list a {
+    font-size: 0.8rem;
+}
+
+.download-list a:hover {
+    color: #ff6b35 !important;
+}
+
+/* 内容面板 */
+.content-panel {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #d4af37;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background: #ff6b35;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.panel-title {
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.panel-content {
+    color: #d4af37;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.panel-content strong {
+    color: #ff6b35;
+}
+
+/* 新闻区域 */
+.news-item {
+    color: #d4af37;
+    padding: 6px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header-section {
+        height: auto;
+        padding-bottom: 20px;
+    }
+    
+    .main-title {
+        position: relative;
+        text-align: center;
+        margin: 20px 0;
+        transform: none;
+        left: auto;
+        top: auto;
+    }
+    
+    .phoenix-image {
+        position: relative;
+        text-align: center;
+        margin: 20px auto;
+        left: auto;
+        top: auto;
+    }
+    
+    .login-box {
+        position: relative !important;
+        width: 100%;
+        margin: 20px 0 !important;
+        right: auto;
+        top: auto;
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+    }
+    
+    .container-fluid {
+        margin-top: 20px !important;
+    }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff6b35;
+}
+
+/* 上排中间图片特殊处理 */
+.middle-col {
+    position: relative;
+    z-index: 10; /* 保证在左右列上层 */
+}
+
+.middle-col .brand-logo-img {
+    max-width: 250px; /* 可根据需要调整 */
+    max-height: 250px;
+    object-fit: contain;
+    display: block;
+}
+
+/* 左右列略微覆盖中间图片 */
+.left-col, .right-col {
+    margin-top: 20px; /* 可以让内容稍微往下，不盖标题 */
+}
+
+.left-col {
+    margin-right: -30px; /* 往中间挤 */
+}
+
+.right-col {
+    margin-left: -30px; /* 往中间挤 */
+}
+
+.small-dj-img {
+  width: 50px;        /* 图片宽度 */
+  height: 50px;       /* 图片高度 */
+  object-fit: cover;  /* 保持比例裁切 */
+  border-radius: 6px; /* 圆角可调 */
+  border: 1px solid #d4af37; /* 金色边框 */
+  background: rgba(212,175,55,0.1);
+}
+
+.col-4.px-0 {
+  margin: 1;
+}
+
+.brand-logo-img {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+

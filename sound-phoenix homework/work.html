@@ -1,86 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SoundPhoenix</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Sound Phoenix</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  <div class="phoenix-image position-absolute" style="top: 0; left: 0; z-index: 10;">
+    <img src="images/phoenix.png" alt="金色凤凰" style="width: 200px; height: 300px;">
+  </div>
 
- <!-- Header (2欄) -->
-  <header class="d-flex justify-content-between align-items-center p-3 header-block">
-    <div class="logo d-flex align-items-center">
-      <div class="img-placeholder logo-placeholder me-2">Logo</div>
-      <h1>SOUNDPHOENIX</h1>
-    </div>
-    <div class="login-box d-flex">
-      <input type="text" placeholder="Username" class="form-control me-2">
-      <input type="password" placeholder="Password" class="form-control me-2">
-      <button class="btn btn-warning">Login</button>
-    </div>
-  </header>
 
-  <!-- Player Section (3欄) -->
-  <section id="player-section" class="container-fluid py-3 player-block">
-    <div class="row align-items-center text-center text-md-start">
-      <div class="col-md-4 mb-2">
-        <div class="img-placeholder turntable-placeholder mx-auto">Turntable</div>
+  <!-- SOUND PHOENIX 标题 (左上) -->
+  <div class="main-title position-absolute">
+    <h1 class="logo-text">SOUND<span class="phoenix-text">PHOENIX</span></h1>
+  </div>
+
+  <!-- 登录框 (右上角) -->
+  <div class="login-box bg-dark text-white rounded-3 p-3 position-absolute">
+    <div class="form-group mb-2">
+      <label class="form-label">Login</label>
+      <input type="text" class="form-control form-control-sm" placeholder="用户名">
+    </div>
+    <div class="form-group mb-2">
+      <label class="form-label">密码</label>
+      <input type="password" class="form-control form-control-sm" placeholder="••••••••">
+    </div>
+    <div class="form-options d-flex justify-content-between align-items-center mb-2">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input"> Remember
+      </label>
+      <a href="#" class="text-warning text-decoration-none small">Forgot Password</a>
+    </div>
+    <button class="btn btn-warning w-100">登录</button>
+  </div>
+  </div>
+
+<!-- 主要内容区域 -->
+<div class="container-fluid px-3" style="margin-top: 180px;">
+  <!-- 上排：3个框 -->
+  <div class="row g-2 mb-2 align-items-center">
+
+    <!-- 左上框：拆成上下两格 -->
+    <div class="col-4">
+      <div class="row g-2">
+        <!-- 上半部分：标题 + 副标题 -->
+        <div class="col-12">
+          <div class="content-box rounded-3 p-3 text-center h-100">
+            <h6 class="text-gold mb-2">Acoustic Music</h6>
+            <p class="text-orange subtitle mb-2">Maximum Down's Bass</p>
+          </div>
+        </div>
+        <!-- 下半部分：三张小图片 -->
+        <div class="col-12">
+          <div class="content-box rounded-3 p-3 text-center h-100">
+            <div class="d-flex justify-content-center align-items-center gap-5">
+              <img src="images/phoenix.png" alt="DJ 1" class="small-dj-img">
+              <img src="images/phoenix.png" alt="DJ 2" class="small-dj-img">
+              <img src="images/phoenix.png" alt="DJ 3" class="small-dj-img">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4 mb-2 dj-info">
-        <h5>Aktuelle Show</h5>
-        <p>Maximum Drum & Bass by DJ E!Ro</p>
-      </div>
-      <div class="col-md-4 mb-2 now-playing">
-        <p>Now Playing: <strong>Subba - Smack around the Clock</strong></p>
+    </div>
+
+    <!-- 中间框：logo + 文字 -->
+    <div class="col-4 px-0"> <!-- 去掉左右 padding，让左右更贴近 -->
+      <div class="row g-0"> <!-- 去掉内部间距 -->
+        <div class="col-12 d-flex justify-content-center">
+          <img src="images/user logo.png" alt="user" class="brand-logo-img">
+        </div>
+        <div class="col-12">
+          <div class="content-box rounded-3 p-3 text-center h-100">
+            <p class="text-gold mb-0">Your Text Here</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Main Content (3欄) -->
-  <main class="container-fluid py-3 main-block">
-    <div class="row">
-      <!-- Left Nav -->
-      <aside class="col-md-3 mb-3 left-block">
-        <ul class="nav flex-column left-nav p-3">
-          <li class="nav-item">Home</li>
-          <li class="nav-item">News</li>
-          <li class="nav-item">Interviews</li>
-          <li class="nav-item">Gästebuch</li>
-          <li class="nav-item">Soundclips</li>
-          <li class="nav-item">Support</li>
-          <li class="nav-item">Kontaktformular</li>
-        </ul>
-      </aside>
-
-      <!-- Main Area -->
-      <section class="col-md-6 mb-3 main-content p-3 center-block">
-        <h4>ERs does it again, Design at its Best</h4>
-        <p>
-          Hier we go again... so oder so ähnlich hat es ERs wohl damals gesagt, und schon hat er gezeigt, dass er wieder einmal ausgezeichnete Arbeit geleistet hat. 
-          Eine neue Website mit Rampenlicht zu stellen!
-        </p>
-        <div class="img-placeholder content-placeholder mt-3">Content Image</div>
-      </section>
-
-      <!-- Right Nav -->
-      <aside class="col-md-3 mb-3 right-block">
-        <ul class="nav flex-column right-nav p-3">
-          <li class="nav-item">Unterpunkt</li>
-          <li class="nav-item">Unterpunkt</li>
-          <li class="nav-item">Unterpunkt</li>
-          <li class="nav-item">Unterpunkt</li>
-        </ul>
-      </aside>
+    <!-- 右上框：功能列表拆成两个小格 -->
+    <div class="col-4">
+      <div class="row g-2">
+        <!-- 上半部分 -->
+      <div class="col-12">
+  <div class="content-box rounded-3 p-1 h-100 align-items-center gap-2">
+    <img src="images/loading.png" alt="user" style="width: 200px; height:100px;object-fit:contain;">
+    <div class="feature-item mb-0">2. Top 10 - Top Million in one</div>
+  </div>
+</div>
+        <!-- 下半部分 -->
+        <div class="col-12">
+          <div class="content-box rounded-3 p-3 h-100">
+            <div class="feature-item">3. 2014 - The Legend of 2014 (Remix)</div>
+            <div class="feature-item">4. New Feature Item</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
 
-  <!-- Footer (1欄) -->
-  <footer class="text-center p-3 footer-block">
-    <p>All Designs developed by ERs © SoundPhoenix</p>
+  </div>
+</div>
+
+
+    <!-- 下排：3列布局 -->
+    <div class="row g-2 mb-2">
+      <!-- 左侧边栏：导航菜单 + 下载 -->
+      <div class="col-3">
+        <div class="content-box p-3 rounded-3 mb-2">
+          <h6 class="text-gold border-bottom border-warning pb-2 mb-2">Main Menu</h6>
+          <ul class="nav flex-column nav-list">
+            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">News</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Difference</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Guestbook</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">SoundLab</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Members</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Affiliates</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Networking</a></li>
+          </ul>
+        </div>
+        <div class="content-box p-3 rounded-3">
+         
+         
+        </div>
+      </div>
+
+      <!-- 中间主内容区域 -->
+      <div class="col-6">
+        <div class="content-panel rounded-3 p-4 h-100">
+          <div class="panel-header d-flex align-items-center mb-3">
+            <span class="status-indicator me-2"></span>
+            <span class="panel-title">It's done a again, Develop at its Best</span>
+          </div>
+          <div class="panel-content">
+            <p>Here we go again - It's time to schedule our 6th <strong>Fella</strong> and discuss message and
+              strategy. It will be scheduled after 10th. <strong>Fella</strong> our
+              strategy should expect again. The overall design will be available next
+              week and we should be back and work together for whole life.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧边栏：新闻区域 -->
+      <div class="col-3">
+        <div class="content-box p-3 rounded-3">
+          <h6 class="text-gold border-bottom border-warning pb-2 mb-2">News 5</h6>
+          <div class="news-item mb-2">new1</div>
+          <div class="news-item mb-2">New</div>
+          <div class="news-item mb-2">New</div>
+          <div class="news-item mb-2">New</div>
+
+          <div class="news-item mb-2">New</div>
+          <div class="news-item mb-2">New</div>
+          <div class="news-item mb-2">New</div>
+          <div class="news-item mb-2">New</div>
+          <div class="news-item">New</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 mt-3 text-secondary">
+    <small>© All Rights Reserved by Sound Phoenix 2025</small>
   </footer>
+  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
