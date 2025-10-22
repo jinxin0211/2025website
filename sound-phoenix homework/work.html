@@ -10,53 +10,66 @@
 </head>
 
 <body>
-  <div class="phoenix-image position-absolute" style="top: 0; left: 0; z-index: 10;">
-    <img src="images/phoenix.png" alt="金色凤凰" style="width: 200px; height: 300px;">
-  </div>
-
-
-  <!-- SOUND PHOENIX 标题 (左上) -->
-  <div class="main-title position-absolute">
-    <h1 class="logo-text">SOUND<span class="phoenix-text">PHOENIX</span></h1>
-  </div>
-
-  <!-- 登录框 (右上角) -->
-  <div class="login-box bg-dark text-white rounded-3 p-3 position-absolute">
-    <div class="form-group mb-2">
-      <label class="form-label">Login</label>
-      <input type="text" class="form-control form-control-sm" placeholder="用户名">
+  <!-- 顶部区域 -->
+  <div class="header-section position-relative">
+    <!-- 凤凰 -->
+    <div class="phoenix-image position-absolute container-fluid" style="top: 0; left: 0; z-index: 10;">
+      <img src="images/phoenix.png" alt="金色凤凰" style="width: 300px; height: 500px;">
     </div>
-    <div class="form-group mb-2">
-      <label class="form-label">密码</label>
-      <input type="password" class="form-control form-control-sm" placeholder="••••••••">
+
+    <!-- 标题 -->
+    <div class="main-title position-absolute" style="top: 50px; left: 80px;">
+      <h1 class="logo-text">SOUND<span class="phoenix-text">PHOENIX</span></h1>
     </div>
-    <div class="form-options d-flex justify-content-between align-items-center mb-2">
-      <label class="form-check-label">
-        <input type="checkbox" class="form-check-input"> Remember
-      </label>
-      <a href="#" class="text-warning text-decoration-none small">Forgot Password</a>
+
+    <!-- 登录框 -->
+    <div class="login-box bg-dark text-white rounded-3 p-3 position-absolute" style="top: 40px; right: 60px;">
+      <div class="form-group mb-2">
+        <label class="form-label">Login</label>
+        <input type="text" class="form-control form-control-sm" placeholder="用户名">
+      </div>
+      <div class="form-group mb-2">
+        <label class="form-label">密码</label>
+        <input type="password" class="form-control form-control-sm" placeholder="••••••••">
+      </div>
+      <div class="form-options d-flex justify-content-between align-items-center mb-2">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input"> Remember
+        </label>
+        <a href="#" class="text-warning text-decoration-none small">Forgot Password</a>
+      </div>
+      <button class="btn btn-warning w-100">登录</button>
     </div>
-    <button class="btn btn-warning w-100">登录</button>
-  </div>
   </div>
 
-<!-- 主要内容区域 -->
-<div class="container-fluid px-3" style="margin-top: 180px;">
-  <!-- 上排：3个框 -->
-  <div class="row g-2 mb-2 align-items-center">
+  <!-- 🚀 主要内容区：整体往下移 -->
+  <div class="container-fluid px-3" style="margin-top: 120px;"> 
+    <!-- 上排 -->
+    <div class="row g-2 mb-2 offset-md-3">
+      <div class="col-3 ">
+        <div class="content-box rounded-3 p-3 text-center h-100 border-bottom border-warning ">
+          <h6 class="text-gold mb-2">Acoustic Music</h6>
+          <p class="text-orange subtitle mb-2">Maximum Down's Bass</p>
+        </div>
+      </div>
 
-    <!-- 左上框：拆成上下两格 -->
-    <div class="col-4">
-      <div class="row g-2">
-        <!-- 上半部分：标题 + 副标题 -->
-        <div class="col-12">
-          <div class="content-box rounded-3 p-3 text-center h-100">
-            <h6 class="text-gold mb-2">Acoustic Music</h6>
-            <p class="text-orange subtitle mb-2">Maximum Down's Bass</p>
+      <div class="col-3 px-0">
+        <div class="row g-0 justify-content-center">
+          <div class="col-4 text-center">
+            <img src="images/user logo.png" alt="user" class="brand-logo-img">
           </div>
         </div>
-        <!-- 下半部分：三张小图片 -->
-        <div class="col-12">
+      </div>
+
+      <div class="col-3">
+        <div class="content-box rounded-3 p-1 h-100 align-items-center gap-2 text-center">
+          <img src="images/loading.png" alt="user" style="width: 100px; height:100px;object-fit:contain;">
+          <div class="feature-item mb-0">2. Top 10 - Top Million in one</div>
+        </div>
+      </div>
+    </div>
+      <div class="row g-2 mb-2">
+        <div class="col-4">
           <div class="content-box rounded-3 p-3 text-center h-100">
             <div class="d-flex justify-content-center align-items-center gap-5">
               <img src="images/phoenix.png" alt="DJ 1" class="small-dj-img">
@@ -65,35 +78,13 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- 中间框：logo + 文字 -->
-    <div class="col-4 px-0"> <!-- 去掉左右 padding，让左右更贴近 -->
-      <div class="row g-0"> <!-- 去掉内部间距 -->
-        <div class="col-12 d-flex justify-content-center">
-          <img src="images/user logo.png" alt="user" class="brand-logo-img">
-        </div>
-        <div class="col-12">
-          <div class="content-box rounded-3 p-3 text-center h-100">
-            <p class="text-gold mb-0">Your Text Here</p>
+        <div class="col-4">
+          <div class="content-box rounded-3 p-3 text-center h-100 text-gold border-bottom border-warning ">
+            <p class="text-gold mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam deleniti recusandae vitae? Facere nihil odit, doloribus animi neque placeat, mollitia voluptatibus quis iure sunt deserunt temporibus id, doloremque ad labore culpa tempore? Ratione, totam voluptat</p>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- 右上框：功能列表拆成两个小格 -->
-    <div class="col-4">
-      <div class="row g-2">
-        <!-- 上半部分 -->
-      <div class="col-12">
-  <div class="content-box rounded-3 p-1 h-100 align-items-center gap-2">
-    <img src="images/loading.png" alt="user" style="width: 200px; height:100px;object-fit:contain;">
-    <div class="feature-item mb-0">2. Top 10 - Top Million in one</div>
-  </div>
-</div>
-        <!-- 下半部分 -->
-        <div class="col-12">
+        <div class="col-4">
           <div class="content-box rounded-3 p-3 h-100">
             <div class="feature-item">3. 2014 - The Legend of 2014 (Remix)</div>
             <div class="feature-item">4. New Feature Item</div>
@@ -102,8 +93,6 @@
       </div>
     </div>
 
-  </div>
-</div>
 
 
     <!-- 下排：3列布局 -->
@@ -113,21 +102,23 @@
         <div class="content-box p-3 rounded-3 mb-2">
           <h6 class="text-gold border-bottom border-warning pb-2 mb-2">Main Menu</h6>
           <ul class="nav flex-column nav-list">
-            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">News</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Difference</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Guestbook</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">SoundLab</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Members</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Affiliates</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-gold p-1">Networking</a></li>
+          <div class="news-item mb-2">Lorem</div>
+          <div class="news-item mb-2">Lorem.</div>
+          <div class="news-item mb-2">lorem</div>
+          <div class="news-item mb-2">lorem</div>
+
+          <div class="news-item mb-2">ggg</div>
+          <div class="news-item mb-2">Newggg</div>
+          <div class="news-item mb-2">Negggw</div>
+          <div class="news-item mb-2">Ngggew</div>
+          <div class="news-item">New</digv>
           </ul>
         </div>
-        <div class="content-box p-3 rounded-3">
-         
-         
+        
+
+
         </div>
-      </div>
+    
 
       <!-- 中间主内容区域 -->
       <div class="col-6">
