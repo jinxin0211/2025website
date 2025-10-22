@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Example</title>
+    <script  src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+<div id="myapp1">
+  {{msg}}
+  <div>
+    {{msg2}}
+  </div>
+  <img v-bind:src="`images/${msg3}` " alt="Example Image">
+  <img v-bind:src="`images/${msg4}` " alt="Example Image">
+ 
+  </div>   
+</body>
+
+<script>
+    var vueapp=Vue.createApp({
+        data(){
+            return{
+                msg:"Hello!",
+                msg2:"Welcome to Vue.js",
+                msg3:'tokyo.jpg',
+                msg4:'rpm.jpg',
+            }
+        }
+    }).mount("#myapp1");
+
+
+</script>
+</html>
