@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Example</title>
-    <script  src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
-<div id="myapp1">
-  {{msg}}
-  <div>
-    {{msg2}}
-  </div>
-  <img v-bind:src="`images/${msg3}` " alt="Example Image">
-  <img v-bind:src="`images/${msg4}` " alt="Example Image">
- 
-  </div>   
+    <div id="myapp1">
+        {{msg}}
+        <div>
+            {{msg2}}
+        </div>
+        <img v-bind:src="msg2 " alt="Example Image">
+        <img src="'images/'+msg3" alt="" v-show="showmsg3">
+        <img v-for="item in aryimg" :src="'images/'+item" alt="">
+    </div>
+
+    <section id="sidebar">
+        <h2>{{title}}</h2>
+        <ul id="port">
+            <!-- <li><img alt="comp0" src="images/markinjapan.jpg" /></li>
+                <li><img alt="comp1" src="images/a2g.jpg" /></li>
+                <li><img alt="comp2" src="images/foobar.jpg" /></li>
+                <li><img alt="comp3" src="images/rpm.jpg" /></li> -->
+            <li v-for="item in port"><img :src="'images/'+item.img" :alt=item.alt></li>
+        </ul>
+    </section>
 </body>
 
 <script>
-    var vueapp=Vue.createApp({
-        data(){
-            return{
-                msg:"Hello!",
-                msg2:"Welcome to Vue.js",
-                msg3:'tokyo.jpg',
-                msg4:'rpm.jpg',
+    var vueapp = Vue.createApp({
+        data() {
+            return {
+                msg: "Hello!",
+                msg2: "images/tokyo.jpg",
+                msg3: "foobar.jpg",
+                showmsg3: true,
+                aryimg: ["a2g.jpg", "markinjapan.jpg", "rpm.jpg"]
             }
         }
     }).mount("#myapp1");
+    var vueapp2 = Vue.createApp({
+        data() {
+            return {
+                title: "Our Work",
+                port: [
+                    { img: "markinjapan.jpg", alt: "comp0",isPub:true },
+                    { img: "a2g.jpg", alt: "comp1",isPub:true },
+                    { img: "foobar.jpg", alt: "comp2",isPub:true },
+                    { img: "rpm.jpg", alt: "comp3",isPub:true },
+                    { img: "tokyo.jpg", alt: "tokyo",isPub:true }
+                ]
+            }
+        }
+    }).mount("#sidebar");
 
 
 </script>
+
 </html>
