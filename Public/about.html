@@ -4,8 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 </head>
+
+<style>
+     header{   
+      position: relative;         
+      width: 100%;         
+      height: 100vh;        
+       display: flex;         
+       justify-content: center;         
+       align-self: start;
+       align-items: center;     
+       }
+
+       header img{         
+       position: absolute;         
+       left:0;         
+       top:0;         
+       width: 100%;     
+       }
+
+       #title{        
+        color: #fff;        
+         font-size: 10em;
+         } 
+</style>
+
 <body>
-    
+    <header>
+        <img id="bg" src="img/bg.jpg" alt="Background Image">
+        <h2 id="title">MOUNTAINS</h2>
+        <img id="man" src="img/man.png" alt="Man Image">
+        <img id="clouds_1"src="img/clouds_1.png" alt="Clouds Image1">
+        <img id="clouds_2"src="img/clouds_2.png" alt="Clouds Image2">
+        <img id="left"src="img/mountain_left.png" alt="">
+        <img id="right"src="img/mountain_right.png" alt="">
+    </header>
 </body>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#bg",{scale:2,douration:3});
+    gsap.to("#title",{scale:0.5,douration:3});
+    gsap.to("#man",{scale:0.5,y:250,douration:3});
+    gsap.to("#clouds_1",{y:-300,x:200,douration:3});
+    gsap.to("#clouds_2",{y:-150,x:-200,douration:3});
+    gsap.to("#left",{x:-200,douration:3});
+    gsap.to("#right",{x:200,douration:3});
+
+    // gsap.to("#man", {
+    //     scrollTrigger: {
+    //         trigger: "header",
+    //         start: "top top",
+    //         end: "bottom top",
+    //         scrub: 1
+    //     },
+    //     y: -200
+    // });
+
+    // gsap.to("#clouds_1", {
+    //     scrollTrigger: {
+    //         trigger: "header",
+    //         start: "top top",
+    //         end: "bottom top",
+    //         scrub: 1
+    //     },
+    //     y: -300,
+    //     x: 200
+    // });
+
+    // gsap.to("#clouds_2", {
+    //     scrollTrigger: {
+    //         trigger: "header",
+    //         start: "top top",
+    //         end: "bottom top",
+    //         scrub: 1
+    //     },
+    //     y: -150,
+    //     x: -200
+    // });
+
+    // gsap.to("#left", {
+    //     scrollTrigger: {
+    //         trigger: "header",
+    //         start: "top top",
+    //         end: "bottom top",
+    //         scrub: 1
+    //     },
+    //     y: 100,
+    //     x: -100
+    // });
+
+    // gsap.to("#right", {
+    //     scrollTrigger: {
+    //         trigger: "header",
+    //         start: "top top",
+    //         end: "bottom top",
+    //         scrub: 1
+    //     },
+    //     y: 100,
+    //     x: 100
+    // });
+</script>
 </html>
