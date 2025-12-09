@@ -366,9 +366,13 @@ body {
   margin-bottom: 1.2rem;
 
   background: linear-gradient(to right, #ffffff, #cbd5e1);
-  -webkit-background-clip: text;
+  background-clip: text;              /* 標準寫法 */
+  -webkit-background-clip: text;      /* Chrome / Safari */
   color: transparent;
+  -webkit-text-fill-color: transparent; /* 部分瀏覽器需要這行 */
+  display: inline-block;              /* 讓背景只包住文字 */
 }
+
 
 .panel-text p {
   font-size: 1.15rem;
