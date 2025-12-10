@@ -81,23 +81,19 @@
     </section>
 
     <!-- 🔥 GSAP 橫向滑動區 -->
-    <!-- 🔥 歷年 FMVP 橫向介紹區 -->
-     <!-- 🔥 歷年 FMVP 橫向介紹區 -->
   <section class="gsap-gallery">
-    <!-- 左上角 FMVP 標籤 -->
     <div class="fmvp-badge">
       <span class="fmvp-badge-main">FMVP HISTORY</span>
       <span class="fmvp-badge-sub">2022 – 2025</span>
     </div>
 
-    <!-- 橫向滑動軌道 -->
+    
     <div class="gsap-track">
 
       <!-- 2022 FMVP -->
       <section class="gsap-panel panel-2022">
         <div class="panel-content">
           <div class="panel-media">
-            <!-- 人像用背景圖固定比例 -->
             <div class="fmvp-photo fmvp-2022"></div>
           </div>
 
@@ -109,8 +105,7 @@
             </p>
             <ul class="fmvp-info-list">
               <li>Lane：Top</li>
-                <li>Key Traits：Teamfight Initiation and Split Pushing</li>
-             
+                <li>Key Traits：Teamfight Initiation and Split Pushing</li>            
             </ul>
 
             <!-- 代表英雄 -->
@@ -141,7 +136,6 @@
           <div class="panel-media">
             <div class="fmvp-photo fmvp-2023"></div>
           </div>
-
           <div class="panel-text">
             <div class="fmvp-year-tag">2023 · WORLDS FMVP</div>
             <h2>Zeus · T1(HLE)</h2>
@@ -174,6 +168,7 @@
         </div>
       </section>
 
+ <!-- 2024 FMVP -->
       <section class="gsap-panel panel-2024">
         <div class="panel-content">
           <div class="panel-media">
@@ -212,7 +207,7 @@
         </div>
       </section>
 
-    
+    <!-- 2025 FMVP --> 
       <section class="gsap-panel panel-2025">
         <div class="panel-content">
           <div class="panel-media">
@@ -251,13 +246,13 @@
         </div>
       </section>
 
-    </div> <!-- /.gsap-track -->
-  </section>  <!-- 🔥 結束 .gsap-gallery -->
+    </div> 
+  </section>  
 
     </section>
 
 
-    <!-- 戰隊簡介區（先簡單留版位） -->
+    <!-- 戰隊簡介區-->
     <section id="team" class="section-team py-5">
         <div class="container">
             <h2 class="h3 fw-bold mb-3">T1 LoL 戰隊</h2>
@@ -325,7 +320,7 @@
             scrollTrigger: {
                 trigger: '.player-hero',
                 start: 'top top',
-                end: '+=900',   // 滾動距離稍微加長，變得更順
+                end: '+=900',   
                 scrub: true,
                 pin: true
             }
@@ -334,23 +329,19 @@
         cards.forEach((card, i) => {
             const dist = Math.abs(i - centerIndex);
             const isCenter = i === Math.round(centerIndex);
-
-            // 🔧 水平位置：中間 0，其他左右輕微打開（有一點重疊）
-            const baseGap = 85;           // 間距：比之前 140 小很多
+            const baseGap = 85;           
             const xOffset = (i - centerIndex) * baseGap;
 
-            // 🔧 縮放：中間最大，兩側漸小，但差距不要太誇張
             let scale;
             if (isCenter) {
-                scale = 1.35;              // 中間：大，但不誇張
+                scale = 1.35;             
             } else {
-                scale = 1.05 - dist * 0.07; // 旁邊兩個 ~0.98、再旁邊 ~0.91
+                scale = 1.05 - dist * 0.07;
                 if (scale < 0.85) scale = 0.85;
             }
 
-            // 🔧 垂直位置：做一點 V 字（越外面越低）
-            const yOffset = dist * 10;   // 想更 V 可以改 12~14
-
+          
+            const yOffset = dist * 10;   
             tl.fromTo(
                 card,
                 {
@@ -371,7 +362,6 @@
         });
 
         // ===== 🔥 GSAP 橫向滑動區設定 =====
-        /* ===== 橫向 FMVP 年表：主動畫 ===== */
         const track = document.querySelector('.gsap-track');
         const panels = gsap.utils.toArray('.gsap-panel');
 
@@ -392,17 +382,17 @@
             });
         }
 
-        /* 🔥 FMVP Badge 從左側滑入（最一開始那種版本） */
+        // ===== 🔥 FMVP 徽章進場動畫 =====
         gsap.from(".fmvp-badge", {
-            x: -80,              // 從左邊外面滑進來
+            x: -80,             
             opacity: 0,
             duration: 1,
             ease: "power2.out",
             scrollTrigger: {
                 trigger: ".gsap-gallery",
-                start: "top center",           // 畫面捲到 FMVP 區時才進場
+                start: "top center",           
                 toggleActions: "play none none reverse"
-                // 想看偵錯點可以暫時加上 markers: true
+                
             }
         });
 
